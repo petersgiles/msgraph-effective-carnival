@@ -860,10 +860,10 @@ namespace Mono.Options
         private static readonly string CommandHelpIndentStart = new string(' ', OptionWidth);
         private static readonly string CommandHelpIndentRemaining = new string(' ', OptionWidth + 2);
 
+        private readonly List<ArgumentSource> sources = new List<ArgumentSource>();
+
         private readonly Regex ValueOption = new Regex(
             @"^(?<flag>--|-|/)(?<name>[^:=]+)((?<sep>[:=])(?<value>.*))?$");
-
-        private readonly List<ArgumentSource> sources = new List<ArgumentSource>();
 
         public OptionSet()
             : this(null)
