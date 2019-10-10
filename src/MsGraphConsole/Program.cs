@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 
 namespace MsGraphConsole
 {
@@ -6,7 +7,9 @@ namespace MsGraphConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var clientId = ConfigurationManager.AppSettings["clientId"];
+
+            Console.WriteLine("Hello World! {0}", clientId);
         }
     }
 }
